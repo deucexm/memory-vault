@@ -5,7 +5,8 @@
     {% for c in consoles %}
     <div class="pa2 mb3 striped--near-white">
         <div class="pl2">
-            <p class="mb2">{{ c.short_name }} {{ c.name }} {{ c.release_year }}</p>
+            <p class="mb2"><a href="{% url 'domain_info' c.id %}">{{ c.short_name }}</a> - {{ c.name }}
+                ({{ c.release_year }})</p>
         </div>
     </div>
     {% endfor %}

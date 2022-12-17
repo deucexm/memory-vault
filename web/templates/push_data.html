@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="mw6 center pa3 sans-serif">
+    <h1 class="mb4">Push new data</h1>
+    <form action="/push_data/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

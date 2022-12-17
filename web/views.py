@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from web.models import Console, Domain, Game, Cheat
+from web.forms import GameForm
 
 
 def index(request):
@@ -32,3 +34,17 @@ def domain_info(request, pk):
         "consoles": console_obj,
     }
     return render(request, "domain_info.html", context)
+
+def push_data(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = GameForm(request.POST)
+        form.save()
+        
+        form = GameForm()
+
+    else:
+        form = GameForm()
+
+    return render(request, 'push_data.html', {'form': form})

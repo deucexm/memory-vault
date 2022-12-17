@@ -2,11 +2,10 @@
 {% block page_content %}
 <div class="mw6 center pa3 sans-serif">
     <h1 class="mb4">Memory-Vault</h1>
-    <header class="b mb2">github repo <a href="https://github.com/deucexm/memory-vault">here</a></a></header>
 
     <div class="pa2 mb3 striped--near-white">
         <p class="mb2">Serving:</p>
-        <p class="mb2">{{ console_num }} consoles</p>
+        <p class="mb2">{{ console_num }} <a href="{% url 'console_list' %}">consoles</a></p>
         <p class="mb2">{{ domain_num }} memory domains</p>
         <p class="mb2">{{ game_num }} games</p>
         <p class="mb2">{{ cheat_num }} individual cheats</p>

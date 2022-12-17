@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block page_content %}
 <div class="mw6 center pa3 sans-serif">
-    <h1 class="mb4">Memory Domains for: {{ consoles.short_name | linebreaks }}</h1>
+    <h1 class="mb4">{{ consoles.short_name }} Memory Domains</h1>
     <header class="b mb2">{{ consoles.name }}</header>
     {% for d in domains %}
     <div class="pa2 mb3 striped--near-white">

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.forms import ModelChoiceField
 
 class Console(models.Model):
     name = models.CharField(max_length=64)
@@ -16,7 +16,7 @@ class Domain(models.Model):
 class Game(models.Model):
     name = models.CharField(max_length=64)
     release_year = models.IntegerField()
-    variations = models.JSONField()
+    source = models.CharField(max_length=99)
     console_id = models.ForeignKey(
         "Console", on_delete=models.CASCADE, null=False)
 
@@ -30,3 +30,16 @@ class Cheat(models.Model):
     game_id = models.ForeignKey(
         "Game", on_delete=models.CASCADE, null=False)
     flag_data = models.JSONField()
+
+class MyModelChoiceField(ModelChoiceField):
+    def label_from_instance(self, obj):
+        if type(obj) is Console:
+            return obj.short_name
+        elif type(obj) is Domain:
+            return obj.name
+        elif type(obj) is Game:
+            return obj.name
+        elif type(obj) is Cheat:
+            return obj.domain_id + '/' + obj.address
+        else:
+            return "Object #%i" % obj.id

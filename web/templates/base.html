@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Contacts</title>
+    <title>Memory-Vault</title>
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 </head>
 
 <body>
+    <p class="tc sans-serif"><a href="{% url 'index' %}">top</a> |
+        <a href="https://github.com/deucexm/memory-vault" target="_blank">github repo</a>
+    </p>
     {% block page_content %}{% endblock %}
 </body>
 

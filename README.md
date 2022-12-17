@@ -4,13 +4,17 @@ An editable database of cheats used with older (10+ years) console games.
 
 ## Installation and Use
 
-Memory-Vault is built using Docker.  It doesn't connect externally yet (or have any of the relevant data), so the process is simple:
+Memory-Vault is built using a basic Django/SQLite setup in its current form, as even at its largest theoretical extent the project is not expected to reach a size that would benefit from something like Postgres.
 
-- install Docker if needed
-- clone repo to desired location and `cd` your way in
-- `docker-compose up -d --build`
+To use it locally:
+- clone the repository
+- install a virtualenv with `python -m venv venv` (or similar)
+- activate your virtualenv
+- install requirements with `pip install -r requirements.txt`
+- start the server with `python manage.py runserver`
 
-The interface should then be available at http://localhost:8000.
+To use it remotely:
+- (todo: docker instructions)
 
 ## History
 

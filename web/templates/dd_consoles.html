@@ -1,0 +1,4 @@
+<option value="">--------</option>
+{% for c in consoles %}
+<option value="{{ c.pk }}">{{ c.short_name }}</option>
+{% endfor %}
