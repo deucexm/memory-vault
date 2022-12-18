@@ -4,11 +4,16 @@
     <h1 class="mb4">Memory-Vault</h1>
 
     <div class="pa2 mb3 striped--near-white">
-        <p class="mb2">Serving:</p>
+        <p class="mb2">Now Serving:</p>
         <p class="mb2">{{ console_num }} <a href="{% url 'console_list' %}">consoles</a></p>
         <p class="mb2">{{ domain_num }} memory domains</p>
         <p class="mb2">{{ game_num }} games</p>
         <p class="mb2">{{ cheat_num }} individual cheats</p>
+    </div>
+
+    <div class="mb2">Add new data:
+        <a href="{% url 'push_data' %}">game</a> |
+        <a href="{% url 'push_data_2' %}">cheat</a>
     </div>
 </div>
 {% endblock %}

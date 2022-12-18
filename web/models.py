@@ -29,14 +29,13 @@ class Cheat(models.Model):
     notes = models.TextField()
     game_id = models.ForeignKey(
         "Game", on_delete=models.CASCADE, null=False)
-    flag_data = models.JSONField()
 
 class MyModelChoiceField(ModelChoiceField):
     def label_from_instance(self, obj):
         if type(obj) is Console:
             return obj.short_name
         elif type(obj) is Domain:
-            return obj.name
+            return obj.console_id.short_name + ' ' + obj.name
         elif type(obj) is Game:
             return obj.name
         elif type(obj) is Cheat:

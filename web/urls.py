@@ -6,4 +6,5 @@ urlpatterns = [
     path('consoles/', views.console_list, name='console_list'),
     path('consoles/<int:pk>/', views.domain_info, name='domain_info'),
     path('push_data/', views.push_data, name='push_data'),
+    path('push_data_2/', views.push_data_2, name='push_data_2'),
 ]

@@ -25,7 +25,7 @@ class GameForm(forms.ModelForm):
 class CheatForm(forms.ModelForm):
     class Meta:
         model = Cheat
-        fields = ['domain_id', 'address', 'name', 'notes', 'game_id', 'flag_data']
+        fields = ['domain_id', 'address', 'name', 'notes', 'game_id']
         field_classes = {
             'domain_id': MyModelChoiceField,
             'game_id': MyModelChoiceField,
